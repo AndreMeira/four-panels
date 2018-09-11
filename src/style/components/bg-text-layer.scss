@@ -1,0 +1,59 @@
+#bg-text-layer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  > div {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+
+    > span {
+      color:rgba(0, 0, 0, 0.02);
+      font-family: 'Pathway Gothic One', sans-serif;
+      font-size: 33rem;
+      position: absolute;
+      top:50%;
+      transform: translateY(-50%);
+      transition:
+        transform .5s cubic-bezier(.34,0,0,.56),
+        opacity   .3s cubic-bezier(.34,0,0,.56);
+
+      &.first-panel {
+        right: -5%;
+        &.split {
+            transform: translateY(-80%);
+        }
+      }
+
+      &.second-panel {
+        left: -5%;
+        &.split {
+          transform: translateY(-40%);
+        }
+      }
+
+      &.disapear {
+        opacity: 0;
+        transition:
+          transform .3s cubic-bezier(.34,0,0,.56) .3s,
+          opacity   .5s cubic-bezier(.34,0,0,.56) .3s;
+      }
+
+      &.darker {
+        transition:
+          transform .5s cubic-bezier(.34,0,0,.56) .1s,
+          opacity   .5s cubic-bezier(.34,0,0,.56) .1s,
+          color     .5s cubic-bezier(.34,0,0,.56) .1s;
+          color:rgba(0, 0, 0, 0.15);
+
+          &.disapear {
+            transition:
+              transform .3s cubic-bezier(.34,0,0,.56) .3s,
+              opacity   .3s cubic-bezier(.34,0,0,.56) .3s,
+              color     .3s cubic-bezier(.34,0,0,.56) .3s;
+
+          }
+      }
+    }
+  }
+}

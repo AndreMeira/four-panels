@@ -1,0 +1,78 @@
+#index {
+  position: fixed;
+  top: 8rem;
+  left: 3rem;
+  width: 4.8rem;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    border-radius: 200px;
+    padding: 20px 0;
+    opacity: 1;
+
+    &.white {
+      .number {
+        color: lighten($color-black-coral, 50%);
+        &.selected {
+          color: lighten($color-black-coral, 10%);
+          color: darken($color-light-red-ochre, 30%);
+        }
+      }
+    }
+  }
+
+  .number {
+    display: block;
+    position: relative;
+    color: lighten($color-black-coral, 80%);
+    color: lighten($color-black-coral, 5%);
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-family: 'Pathway Gothic One', sans-serif;
+    transition: font-size .3s linear .3s, color .3s linear .3s;
+
+    // &:after, &:before {
+    //   opacity: 0;
+    //   position: absolute;
+    //   display: block;
+    //   content: " ";
+    //   border: solid 3px lighten($color-light-red-ochre, 0%);
+    //   top: 1.2rem;
+    //   width: 2rem;
+    //   height: 2rem;
+    //   border-left: 0;
+    //   border-bottom: 0;
+    //   transition: opacity .3s linear, transform .5s linear;
+    // }
+    //
+    // &:after {
+    //   left: -.5rem;
+    //   transform: rotateZ(225deg) scale(.2);
+    // }
+    //
+    // &:before {
+    //   right: -.5rem;
+    //   transform: rotateZ(45deg) scale(.2);
+    // }
+
+    &.selected {
+      font-size: 1.5rem;
+      color: darken($color-black-coral, 20%);
+      color: darken($color-light-red-ochre, 10%);
+
+      &:after, &:before {
+        opacity: 1;
+      }
+
+      &:after {
+        transform: rotateZ(225deg) scale(1);
+      }
+
+      &:before {
+        transform: rotateZ(45deg) scale(1);
+      }
+
+    }
+  }
+}

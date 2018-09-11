@@ -1,0 +1,66 @@
+.four-panels {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  > div {
+    width:25%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    border-right:solid 1px lighten($color-black-coral, 50%);
+
+    &:last-child {
+      border-right: 0px;
+    }
+
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      transform: translateY(100%);
+      background-color: lighten($color-black-coral, 55%);
+      background-size: 400%;
+      transition: transform .6s ease-in-out;
+    }
+
+    &.close {
+      &:after {
+        transform: translateY(0%);
+      }
+    }
+
+    &.open {
+      &:after {
+        transform: translateY(-100%);
+      }
+    }
+
+    &.open:nth-child(1), &.close:nth-child(1) {
+      &:after {
+          transition-delay: 0;
+      }
+    }
+
+    &.open:nth-child(2), &.close:nth-child(2) {
+      &:after {
+          transition-delay: .1s;
+      }
+    }
+
+    &.open:nth-child(3), &.close:nth-child(3) {
+      &:after {
+          transition-delay: .2s;
+      }
+    }
+
+    &.open:nth-child(4), &.close:nth-child(4) {
+      &:after {
+          transition-delay: .3s;
+      }
+    }
+
+  }
+}

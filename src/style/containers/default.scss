@@ -1,0 +1,48 @@
+.rel-v-center {
+  @include rel-v-center;
+}
+
+.half-parent {
+  width: 50%;
+}
+
+.container {
+  position: relative;
+  border: solid 1px transparent;
+  max-width: 1024px;
+  margin: auto;
+
+  &.half {
+    margin: initial;
+    width: 512px;
+    &.right {
+      left: 50%;
+    }
+  }
+}
+
+.container-text-center {
+  text-align: center;
+}
+
+.small-container {
+  max-width: 800px;
+  position: relative;
+  padding-bottom: 2rem;
+
+  &:before {
+    content: "";
+    width:20%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: solid 1px lighten(#596984, 35%);
+  }
+
+  &:last-child {
+    &:before {
+        border: none;
+    }
+  }
+}

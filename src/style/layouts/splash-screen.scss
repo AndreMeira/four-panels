@@ -1,0 +1,97 @@
+#splash-screen {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  h1 {
+    font-size: 5rem;
+    color: darken($color-white, 80%);
+    margin-top: 12rem;
+  }
+  h1 span {
+    margin: 0 auto;
+    color: darken($color-white, 80%);
+    text-align: center;
+    font-size: 2rem;
+    opacity: .1;
+    line-height: normal;
+    font-family: Arial;
+    transition: all .3s ease-in .3s, text-shadow 1.3s linear 1.2s;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1rem 0;
+    transform: translateY(1rem);
+
+    &:nth-child(2) {
+      transition: all .3s ease-in .8s, text-shadow 1.3s linear 1.2s
+    }
+
+    &:nth-child(3) {
+      transition: all .3s ease-in 1.3s, text-shadow 1.3s linear 1.2s
+    }
+  }
+
+  .splash-screen-bg {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+      45deg,
+      darken($color-weldon-blue, 40%) 5%,
+      darken($color-weldon-blue, 45%) 15%,
+      darken($color-weldon-blue, 60%) 50%
+    );
+  }
+
+  &.splash-fox-enter-active {
+
+  }
+
+  &.splash-fox-leave-active {
+     animation: "splash-fox" .5s cubic-bezier(.75,.41,1,.53);
+     animation-delay: 2.2s;
+
+     .splash-screen-content {
+       animation: "splash-fox-reverse" .5s cubic-bezier(.75,.41,1,.53);
+       animation-delay: 2.2s;
+     }
+
+     h1 span {
+       opacity: 1;
+       color: lighten(orange, 10%);
+       transform: translateY(0rem);
+       text-shadow: 0px 0px 30px lighten(orange, 0%);
+     }
+
+     .splash-screen-bg {
+       transform: scale(1);
+     }
+
+     svg {
+       path:nth-child(2) {
+         stroke-dasharray: 3000;
+         stroke-dashoffset: 3000;
+         animation: dash 2.2s linear forwards;
+         animation-delay: .0s,
+       }
+     }
+  }
+
+  .splash-screen-content {
+    height: 100vh;
+  }
+
+  .splash-logo-container {
+    @include abs-center();
+    text-align: center;
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

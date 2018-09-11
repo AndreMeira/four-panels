@@ -1,0 +1,69 @@
+/**
+ * These variables are local like.
+ * That's why they don't go in the abstracts/variables.scss file.
+ */
+$fp-section-animation:cubic-bezier(0.68, 0, 0.265, 1);
+$fp-text-animation-function-up: cubic-bezier(.73,0,.2,1);
+// $fp-text-animation-function-down: cubic-bezier(.34,0,0,.56);
+
+$fp-text-animation-function-down: cubic-bezier(1,.28,.3,.59);
+// $fp-text-animation-function-down: cubic-bezier(1,.28,.4,.41);
+// $fp-text-animation-function-down: cubic-bezier(.73,0,.2,1);
+
+
+$fp-duration-transform:.5s;
+$fp-duration-transform-slow:.6s;
+$fp-duration-opacity: .4s;
+
+
+.full-page {
+  transition: transform 1s cubic-bezier(0.68, 0, 0.265, 1) 0.1s !important;
+  > .section {
+
+    .container {
+      &.down {
+        .entering-first {
+            transition:transform $fp-duration-transform $fp-text-animation-function-up .0s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-up .1s;
+        }
+
+        .entering-second {
+            transition:transform $fp-duration-transform $fp-text-animation-function-up .2s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-up .3s;
+        }
+
+        .entering-third {
+            transition:transform $fp-duration-transform $fp-text-animation-function-up .3s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-up .4s;
+        }
+
+        .entering-fourth {
+            transition:transform $fp-duration-transform $fp-text-animation-function-up .4s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-up .5s;
+        }
+      }
+
+      &.up {
+        .entering-first {
+            transition:transform $fp-duration-transform-slow $fp-text-animation-function-down .4s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-down .5s;
+        }
+
+        .entering-second {
+            transition:transform $fp-duration-transform $fp-text-animation-function-down .3s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-down .4s;
+        }
+
+        .entering-third {
+            transition:transform $fp-duration-transform $fp-text-animation-function-down .1s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-down .2s;
+        }
+
+        .entering-fourth {
+            transition:transform $fp-duration-transform $fp-text-animation-function-down .0s,
+                       opacity   $fp-duration-opacity   $fp-text-animation-function-down .1s;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.spacer {
+  // to refactor
+  min-height: 3rem;
+}
+
+.article-block:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+.full-height-container {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+
+  > div {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+    text-align: center;
+    min-height: 300px;
+
+    @include respond(phone) {
+      position: relative;
+      top:10%;
+      left: 0;
+      transform: none;
+      min-height: inherit;
+    }
+  }
+}
+
+.row {
+    margin: 0 auto;
+    @include clearfix;
+
+    [class^="col-"] {
+        float: left;
+
+        // be more flexible than just that
+        @include respond(tab-port) {
+            width: 100% !important;
+        }
+    }
+
+    .col-40-on-100 {
+      width: 40%;
+    }
+
+    .col-60-on-100 {
+      width: 60%;
+    }
+
+    .col-1-of-2 {
+        width: 50%;
+    }
+
+    .col-1-of-3 {
+        width: calc(100% / 3);
+    }
+
+    .col-1-of-8 {
+        width: calc(100% / 8);
+    }
+
+    .col-2-of-3 {
+        width: calc((2 * 100%) / 3);
+    }
+
+    .col-1-of-6 {
+        width: calc(100% / 6);
+    }
+
+    .col-1-of-4 {
+        width: 25%;
+    }
+
+    .col-2-of-4 {
+        width: 50%;
+    }
+
+    .col-3-of-4 {
+        width: 75%;
+    }
+
+}
