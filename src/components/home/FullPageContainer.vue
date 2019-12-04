@@ -15,10 +15,10 @@
       :sectionStyle="sectionsStyle[2]"
       :active="currentIndex === 2"></MoreThanCode>
 
-    <GrowTogether
+    <Experiences
       :sectionClass="sections[3]"
       :sectionStyle="sectionsStyle[3]"
-      :active="currentIndex === 3"></GrowTogether>
+      :active="currentIndex === 3"></Experiences>
 
     <GetInTouch
       :sectionClass="sections[4]"
@@ -36,6 +36,7 @@ import MoreThanCode from './slides/MoreThanCode';
 import GrowTogether from './slides/GrowTogether';
 import GetInTouch from './slides/GetInTouch';
 import Skills     from './slides/Skills';
+import Experiences from './slides/Experiences';
 import FullPage from 'vue-fullpage.js/src/FullPage';
 import fullPageMixin from 'vue-fullpage.js/src/fullPageMixin';
 
@@ -48,6 +49,7 @@ export default {
     MoreThanCode,
     GrowTogether,
     GetInTouch,
+    Experiences,
     Skills
   },
 
@@ -64,8 +66,8 @@ export default {
         // scrollingSpeed: 1000,
       },
 
-      sections: Array(4).fill('down'),
-      sectionsStyle: Array(4).fill({translate:'15', opacity:0}),
+      sections: Array(5).fill('down'),
+      sectionsStyle: Array(5).fill({translate:'15', opacity:0}),
       // sectionsStyle: Array(3).fill({translate:'0', opacity:0}),
     }
   },
@@ -74,7 +76,7 @@ export default {
     setTimeout(() => {
         this.setSection(0, 'down entering');
         this.setSectionStyle(0, {translate:'0', opacity:'1'});
-    }, 2300);
+    }, 2400);
   },
 
   methods: {

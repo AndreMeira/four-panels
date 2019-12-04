@@ -62,6 +62,7 @@
      h1 span {
        opacity: 1;
        color: lighten(orange, 10%);
+       color: darken(white, 10%);
        transform: translateY(0rem);
        text-shadow: 0px 0px 30px lighten(orange, 0%);
      }
@@ -71,11 +72,14 @@
      }
 
      svg {
+
        path:nth-child(2) {
+         stroke:white;
+         stroke:orange;
          stroke-dasharray: 3000;
          stroke-dashoffset: 3000;
-         animation: dash 2.2s linear forwards;
-         animation-delay: .0s,
+         // animation: dash 1.5s linear forwards;
+         // animation-delay: 1.7s,
        }
      }
   }

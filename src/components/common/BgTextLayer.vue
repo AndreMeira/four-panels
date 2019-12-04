@@ -23,8 +23,8 @@ import {Mediator} from '@/Mediator';
 const text = [
   ["Hello", "World"],
   ["Techno", "logies"],
-  ["Andre", "Meira"],
-  ["Andre", "Meira"],
+  ["Stay", "open"],
+  ["Exper", "iences"],
   ["Right", "Now"],
 ];
 

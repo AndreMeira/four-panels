@@ -9,6 +9,7 @@
 
     > span {
       color:rgba(0, 0, 0, 0.02);
+      color:transparentize($color-black-coral, .96);
       font-family: 'Pathway Gothic One', sans-serif;
       font-size: 33rem;
       position: absolute;

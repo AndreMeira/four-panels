@@ -18,7 +18,7 @@
                       opacity="1" fill-opacity="0" stroke="#333" stroke-width="45" stroke-opacity=".7" stroke-linecap="round" stroke-linejoin="round"></path>
                     <path
                       d="M590 427.65L590 22.95L455 157.85L320 157.85L185 157.85L50 22.95L50 427.65L320 630L590 427.65Z"
-                      opacity=".8" fill-opacity="0" stroke="orange" stroke-width="10" stroke-opacity="1"></path>
+                      opacity=".8" fill-opacity="0" stroke-width="10" stroke-opacity="1"></path>
                   </g>
                 </g>
               </g>
